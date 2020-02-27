@@ -2,22 +2,13 @@
 
 Using Django Q for asynchronous tasks in your Django Application - Basic
 
-Steps followed :: 
+# Setup 
 
-1. Create a Django Project 
-
-        django-admin startproject app_name .
-        python manage.py makemigrations
-        python manage.py migrate
+1. Clone this repo
         
-      Now your Django app should be up and running      
+3. Get free heroku redis addon
 
-2. Create Django app inside your Django project
-       
-        django-admin startapp app_name
-        
-3. Get free heroku redis addons 
-
+        heroku login
         heroku create --addons=heroku-redis
         heroku config:get REDIS_URL
         
@@ -31,7 +22,7 @@ Steps followed ::
 
         pip install django-q redis
 
-6. Django Q configuration
+6. Modify Django Q configuration in settings.py file
 
          Q_CLUSTER = {
             'name': 'your_project_name',
